@@ -1,0 +1,676 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Yassine Elshamy — a personal portfolio of experiences, achievements, projects, and updates." />
+    <meta name="theme-color" content="#ffffff" />
+    <title>Yassine Elshamy</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --ink: #25282b;
+        --muted: #606970;
+        --line: #dfe3e6;
+        --blue: #356994;
+        --blue-dark: #244f74;
+        --wash: #f3f5f6;
+        --content: 1000px;
+        --font: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      }
+
+      * { box-sizing: border-box; }
+
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 1.5rem;
+      }
+
+      body {
+        min-width: 320px;
+        margin: 0;
+        color: var(--ink);
+        background: #fff;
+        font-family: var(--font);
+        font-size: 15px;
+        line-height: 1.75;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      a { color: var(--blue); text-decoration: none; }
+      a:hover { color: var(--blue-dark); text-decoration: underline; }
+      a:focus-visible, summary:focus-visible {
+        outline: 3px solid #93bad6;
+        outline-offset: 4px;
+        border-radius: 3px;
+      }
+
+      .skip-link {
+        position: absolute;
+        top: 0.7rem;
+        left: 0.7rem;
+        z-index: 5;
+        padding: 0.5rem 0.8rem;
+        transform: translateY(-150%);
+        color: #fff;
+        background: #172f41;
+      }
+      .skip-link:focus { transform: translateY(0); }
+
+      .wrap {
+        width: min(calc(100% - 48px), var(--content));
+        margin-inline: auto;
+      }
+
+      header { padding-top: 1rem; }
+
+      .nav {
+        display: flex;
+        justify-content: flex-end;
+        gap: 1.4rem;
+        padding: 0.35rem 0 0.7rem;
+      }
+
+      .nav a {
+        color: #4f6574;
+        font-size: 0.83rem;
+      }
+
+      main { padding-top: 1.1rem; }
+
+      .hero {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 220px;
+        grid-template-areas: "copy photo";
+        align-items: start;
+        gap: 2rem;
+        padding: 1rem 0 1.2rem;
+      }
+
+      .hero-copy { grid-area: copy; }
+
+      h1, h2, h3, p { margin-top: 0; }
+
+      h1 {
+        margin-bottom: 0.9rem;
+        font-size: clamp(2rem, 4vw, 2.45rem);
+        letter-spacing: -0.045em;
+        line-height: 1.2;
+      }
+
+      .hero p {
+        margin-bottom: 0.9rem;
+        color: #303438;
+        line-height: 1.78;
+      }
+
+      .hero .intro-prompt { color: var(--muted); }
+
+      .portrait {
+        grid-area: photo;
+        display: grid;
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        align-content: center;
+        justify-items: center;
+        overflow: hidden;
+        border: 1px solid #d9dfe2;
+        border-radius: 8px;
+        color: #526775;
+        background:
+          linear-gradient(145deg, rgba(255,255,255,.7), transparent 56%),
+          linear-gradient(135deg, #dfe6e8, #eef1ee 58%, #dce3e5);
+        text-align: center;
+      }
+
+      .portrait-monogram {
+        display: grid;
+        width: 66px;
+        aspect-ratio: 1;
+        margin-bottom: 0.6rem;
+        place-items: center;
+        border: 1px solid rgba(54, 87, 107, 0.38);
+        border-radius: 50%;
+        color: #3c627c;
+        font-size: 1.25rem;
+        font-weight: 650;
+        letter-spacing: -0.08em;
+      }
+
+      .portrait small {
+        padding-inline: 0.75rem;
+        color: #64727a;
+        font-size: 0.68rem;
+      }
+
+      .social-links {
+        margin-top: 1.15rem;
+        color: #7b858b;
+        font-size: 0.88rem;
+      }
+
+      .social-links span { margin-inline: 0.45rem; color: #aab1b5; }
+      .placeholder { color: #737e85; font-style: italic; }
+
+      .facts {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        max-width: 720px;
+        gap: 1rem;
+        margin: 0.8rem auto 3.4rem;
+      }
+
+      .fact {
+        min-width: 0;
+        padding: 0.4rem 0.6rem;
+        text-align: center;
+      }
+
+      .fact-icon {
+        display: grid;
+        width: 44px;
+        height: 44px;
+        margin: 0 auto 0.55rem;
+        place-items: center;
+        border-radius: 9px;
+        color: #344c5b;
+        background: #f0f2f3;
+      }
+
+      .fact-icon svg {
+        width: 21px;
+        height: 21px;
+        fill: none;
+        stroke: currentColor;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 1.7;
+      }
+
+      .fact strong {
+        display: block;
+        font-size: 0.8rem;
+        line-height: 1.5;
+      }
+
+      .fact small {
+        display: block;
+        margin-top: 0.15rem;
+        color: var(--muted);
+        font-size: 0.72rem;
+        line-height: 1.45;
+      }
+
+      .section {
+        padding: 2.2rem 0 2.5rem;
+        border-top: 1px solid var(--line);
+      }
+
+      .section h2 {
+        margin-bottom: 1rem;
+        font-size: 1.35rem;
+        letter-spacing: -0.025em;
+        line-height: 1.35;
+      }
+
+      .section-intro {
+        max-width: 720px;
+        margin: -0.45rem 0 1.3rem;
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+
+      .news-list { display: grid; }
+
+      .news-item {
+        display: grid;
+        grid-template-columns: 88px minmax(0, 1fr);
+        gap: 1rem;
+        padding: 0.82rem 0;
+        border-bottom: 1px solid #edf0f1;
+      }
+
+      .news-date {
+        color: #68757d;
+        font-size: 0.82rem;
+        white-space: nowrap;
+      }
+
+      .news-item p {
+        margin: 0;
+        font-size: 0.9rem;
+        line-height: 1.6;
+      }
+
+      .experience-list { display: grid; gap: 0.8rem; }
+
+      .experience-card {
+        padding: 1.05rem 1.1rem;
+        border: 1px solid var(--line);
+        border-radius: 6px;
+        background: #fff;
+      }
+
+      .experience-top {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 1rem;
+      }
+
+      .experience-card h3,
+      .project-card h3 {
+        margin-bottom: 0.2rem;
+        font-size: 1rem;
+        letter-spacing: -0.015em;
+        line-height: 1.45;
+      }
+
+      .meta {
+        margin-bottom: 0.55rem;
+        color: #68747a;
+        font-size: 0.78rem;
+      }
+
+      .experience-card > p:last-of-type,
+      .project-card > p {
+        margin-bottom: 0.6rem;
+        color: #454d52;
+        font-size: 0.88rem;
+        line-height: 1.65;
+      }
+
+      details { margin-top: 0.55rem; }
+      summary {
+        width: fit-content;
+        color: var(--blue);
+        cursor: pointer;
+        font-size: 0.82rem;
+      }
+      details p {
+        max-width: 800px;
+        margin: 0.55rem 0 0.2rem;
+        color: var(--muted);
+        font-size: 0.86rem;
+      }
+
+      .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.35rem;
+        margin-top: 0.8rem;
+      }
+      .tags span {
+        padding: 0.15rem 0.48rem;
+        border: 1px solid #e2e7ea;
+        border-radius: 999px;
+        color: #58666f;
+        background: #fafbfb;
+        font-size: 0.68rem;
+        line-height: 1.5;
+      }
+
+      .achievement-list {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 0.8rem;
+      }
+      .achievement {
+        padding: 1rem;
+        border: 1px solid var(--line);
+        border-radius: 6px;
+        background: #fff;
+      }
+      .achievement small {
+        display: block;
+        margin-bottom: 0.45rem;
+        color: #68757d;
+        font-size: 0.75rem;
+      }
+      .achievement strong {
+        display: block;
+        margin-bottom: 0.3rem;
+        font-size: 0.9rem;
+        line-height: 1.5;
+      }
+      .achievement p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 0.82rem;
+        line-height: 1.55;
+      }
+
+      .projects {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.9rem;
+      }
+      .project-card {
+        overflow: hidden;
+        border: 1px solid var(--line);
+        border-radius: 7px;
+        background: #fff;
+      }
+      .project-image {
+        display: grid;
+        min-height: 150px;
+        place-items: center;
+        border-bottom: 1px solid var(--line);
+        color: #66747b;
+        background:
+          linear-gradient(135deg, transparent 49.7%, rgba(90, 113, 125, .08) 50%, transparent 50.3%),
+          #f2f4f5;
+        font-size: 0.75rem;
+      }
+      .project-card:nth-child(2) .project-image { background-color: #f4f3f1; }
+      .project-card:nth-child(3) .project-image { background-color: #f1f4f2; }
+      .project-card:nth-child(4) .project-image { background-color: #f4f2f5; }
+      .project-body { padding: 1rem 1.05rem 1.1rem; }
+      .project-body .meta { margin-bottom: 0.4rem; }
+
+      .skills {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0 2rem;
+      }
+      .skill-row {
+        display: grid;
+        grid-template-columns: minmax(130px, 0.8fr) minmax(0, 1.2fr);
+        gap: 1rem;
+        padding: 0.75rem 0;
+        border-bottom: 1px solid #edf0f1;
+      }
+      .skill-row dt { font-size: 0.84rem; font-weight: 650; }
+      .skill-row dd {
+        margin: 0;
+        color: #5c686e;
+        font-size: 0.84rem;
+      }
+
+      .contact {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+      }
+      .contact p { margin: 0; color: var(--muted); }
+      footer {
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+        padding: 1.2rem 0 2rem;
+        border-top: 1px solid var(--line);
+        color: #707b81;
+        font-size: 0.75rem;
+      }
+      footer p { margin: 0; }
+
+      @media (max-width: 700px) {
+        .wrap { width: min(calc(100% - 40px), var(--content)); }
+        header { padding-top: 0.6rem; }
+        .nav {
+          justify-content: center;
+          flex-wrap: wrap;
+          gap: 0.35rem 0.85rem;
+        }
+        .nav a { font-size: 0.78rem; }
+
+        main { padding-top: 0.35rem; }
+        .hero {
+          grid-template-columns: minmax(0, 1fr);
+          grid-template-areas: "photo" "copy";
+          justify-items: center;
+          gap: 0.25rem;
+          padding-top: 0.7rem;
+          text-align: center;
+        }
+        .hero-copy { width: 100%; }
+        .hero h1 {
+          margin: 0.8rem 0 0.65rem;
+          font-size: 2rem;
+        }
+        .hero p { margin-bottom: 0.8rem; font-size: 0.92rem; }
+        .portrait {
+          width: 160px;
+          border-radius: 8px;
+        }
+        .social-links { margin-top: 0.8rem; }
+
+        .facts {
+          gap: 0.25rem;
+          margin: 1.3rem auto 2.3rem;
+        }
+        .fact { padding-inline: 0.15rem; }
+        .fact-icon { width: 39px; height: 39px; margin-bottom: 0.4rem; }
+        .fact strong { font-size: 0.73rem; }
+        .fact small { font-size: 0.68rem; }
+
+        .section { padding: 1.8rem 0 2rem; }
+        .section h2 { font-size: 1.25rem; }
+        .news-item { grid-template-columns: minmax(0, 1fr); gap: 0.1rem; padding: 0.75rem 0; }
+        .news-date { font-size: 0.74rem; }
+        .news-item p { font-size: 0.86rem; }
+
+        .achievement-list { grid-template-columns: minmax(0, 1fr); gap: 0.6rem; }
+        .achievement { padding: 0.85rem 0.95rem; }
+        .projects { grid-template-columns: minmax(0, 1fr); gap: 0.7rem; }
+        .project-image { min-height: 125px; }
+
+        .skills { grid-template-columns: minmax(0, 1fr); }
+        .skill-row { grid-template-columns: minmax(105px, 0.75fr) minmax(0, 1.25fr); gap: 0.65rem; }
+        .contact { align-items: flex-start; flex-direction: column; }
+        footer { flex-direction: column; gap: 0.35rem; }
+      }
+
+      @media (max-width: 360px) {
+        .wrap { width: min(calc(100% - 32px), var(--content)); }
+        .nav { justify-content: flex-start; gap: 0.85rem; }
+        .facts { margin-top: 1.05rem; }
+        .fact strong { font-size: 0.69rem; }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html { scroll-behavior: auto; }
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="wrap">
+      <nav class="nav" aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#news">News</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#achievements">Achievements</a>
+      </nav>
+    </header>
+
+    <main class="wrap" id="main-content">
+      <section class="hero" id="about" aria-labelledby="page-title">
+        <div class="hero-copy">
+          <h1 id="page-title">Yassine Elshamy</h1>
+          <p>Hello! I’m Yassine, <span class="placeholder">[your program, field, or current role]</span>. I’m interested in <span class="placeholder">[the kind of work or questions that motivate you]</span>.</p>
+          <p>My experience includes <span class="placeholder">[a role, project, or meaningful experience]</span>. I enjoy turning what I learn into <span class="placeholder">[a result, contribution, or thing you have built]</span>.</p>
+          <p>I’m currently <span class="placeholder">[what you’re focused on now]</span> and looking for <span class="placeholder">[the opportunity or next step you want]</span>.</p>
+          <div class="social-links" aria-label="Contact and social links">
+            <a href="#contact">Email</a><span aria-hidden="true">/</span>
+            <a href="#projects">Projects</a><span aria-hidden="true">/</span>
+            <a href="#experience">Experience</a>
+          </div>
+        </div>
+        <div class="portrait" role="img" aria-label="Portrait placeholder for Yassine Elshamy">
+          <span class="portrait-monogram" aria-hidden="true">YE</span>
+          <small>[Add a portrait photo]</small>
+        </div>
+      </section>
+
+      <section class="facts" aria-label="Profile highlights">
+        <div class="fact">
+          <span class="fact-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2Z"/></svg>
+          </span>
+          <strong>Education</strong>
+          <small>[Program · School]</small>
+        </div>
+        <div class="fact">
+          <span class="fact-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="14" rx="2"/><path d="M8 7V4h8v3M3 12h18M10 12v2h4v-2"/></svg>
+          </span>
+          <strong>Current focus</strong>
+          <small>[Role · Project]</small>
+        </div>
+        <div class="fact">
+          <span class="fact-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M12 3v18M3 12h18"/><circle cx="12" cy="12" r="9"/></svg>
+          </span>
+          <strong>Open to</strong>
+          <small>[Opportunity · Location]</small>
+        </div>
+      </section>
+
+      <section class="section" id="news" aria-labelledby="news-title">
+        <h2 id="news-title">News</h2>
+        <div class="news-list">
+          <article class="news-item">
+            <div class="news-date">[Month Year]</div>
+            <p><span class="placeholder">[A recent achievement, announcement, or milestone.]</span></p>
+          </article>
+          <article class="news-item">
+            <div class="news-date">[Month Year]</div>
+            <p><span class="placeholder">[A new role, project, or opportunity you started.]</span></p>
+          </article>
+          <article class="news-item">
+            <div class="news-date">[Month Year]</div>
+            <p><span class="placeholder">[A result or update worth sharing with visitors.]</span></p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="experience" aria-labelledby="experience-title">
+        <h2 id="experience-title">Experience</h2>
+        <p class="section-intro">A few roles and experiences that have shaped what I know and how I work.</p>
+        <div class="experience-list">
+          <article class="experience-card">
+            <div class="experience-top">
+              <div>
+                <h3><span class="placeholder">[Role or experience]</span></h3>
+                <p class="meta">[Organization] &nbsp;·&nbsp; [Location] &nbsp;·&nbsp; [Dates]</p>
+              </div>
+            </div>
+            <p><span class="placeholder">[In one or two sentences, describe your contribution and its result.]</span></p>
+            <details>
+              <summary>Read more</summary>
+              <p>[Add a little more context, your responsibilities, and a measurable outcome if you have one.]</p>
+            </details>
+            <div class="tags" aria-label="Related skills"><span>[Skill]</span><span>[Skill]</span><span>[Area]</span></div>
+          </article>
+          <article class="experience-card">
+            <h3><span class="placeholder">[Second role, leadership experience, or involvement]</span></h3>
+            <p class="meta">[Organization] &nbsp;·&nbsp; [Location] &nbsp;·&nbsp; [Dates]</p>
+            <p><span class="placeholder">[What you helped accomplish and what you took away from it.]</span></p>
+            <details>
+              <summary>Read more</summary>
+              <p>[Add supporting details, collaborators, tools, or results.]</p>
+            </details>
+            <div class="tags" aria-label="Related skills"><span>[Skill]</span><span>[Skill]</span><span>[Area]</span></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="achievements" aria-labelledby="achievements-title">
+        <h2 id="achievements-title">Achievements</h2>
+        <p class="section-intro">Recognition, outcomes, and goals reached—each with a little context.</p>
+        <div class="achievement-list">
+          <article class="achievement">
+            <small>[Year] · [Award, honor, or result]</small>
+            <strong><span class="placeholder">[The headline achievement]</span></strong>
+            <p>[What it recognized or why it mattered.]</p>
+          </article>
+          <article class="achievement">
+            <small>[Year] · [Competition, program, or milestone]</small>
+            <strong><span class="placeholder">[Another meaningful result]</span></strong>
+            <p>[Add a short explanation or your contribution.]</p>
+          </article>
+          <article class="achievement">
+            <small>[Year] · [Community or personal milestone]</small>
+            <strong><span class="placeholder">[A win you’re proud of]</span></strong>
+            <p>[Add the detail that helps someone understand its impact.]</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="projects" aria-labelledby="projects-title">
+        <h2 id="projects-title">Selected projects</h2>
+        <p class="section-intro">A closer look at a few things I’ve made, explored, or helped move forward.</p>
+        <div class="projects">
+          <article class="project-card">
+            <div class="project-image" role="img" aria-label="Placeholder for project image">[Project image]</div>
+            <div class="project-body">
+              <p class="meta">[Year] &nbsp;·&nbsp; [Course, team, or context]</p>
+              <h3><span class="placeholder">[Project name]</span></h3>
+              <p>[What it does, what you contributed, and one outcome.]</p>
+              <details><summary>Read more</summary><p>[Add a longer explanation, project link, or supporting result.]</p></details>
+              <div class="tags"><span>[Tool]</span><span>[Skill]</span><span>[Area]</span></div>
+            </div>
+          </article>
+          <article class="project-card">
+            <div class="project-image" role="img" aria-label="Placeholder for project image">[Project image]</div>
+            <div class="project-body">
+              <p class="meta">[Year] &nbsp;·&nbsp; [Course, team, or context]</p>
+              <h3><span class="placeholder">[Project name]</span></h3>
+              <p>[The challenge, your approach, and what changed as a result.]</p>
+              <details><summary>Read more</summary><p>[Add a longer explanation, project link, or supporting result.]</p></details>
+              <div class="tags"><span>[Tool]</span><span>[Skill]</span><span>[Area]</span></div>
+            </div>
+          </article>
+          <article class="project-card">
+            <div class="project-image" role="img" aria-label="Placeholder for project image">[Project image]</div>
+            <div class="project-body">
+              <p class="meta">[Year] &nbsp;·&nbsp; [Personal, academic, or community]</p>
+              <h3><span class="placeholder">[Project name]</span></h3>
+              <p>[Add a concise description that highlights your part in the work.]</p>
+              <details><summary>Read more</summary><p>[Add a longer explanation, project link, or supporting result.]</p></details>
+              <div class="tags"><span>[Tool]</span><span>[Skill]</span><span>[Area]</span></div>
+            </div>
+          </article>
+          <article class="project-card">
+            <div class="project-image" role="img" aria-label="Placeholder for project image">[Project image]</div>
+            <div class="project-body">
+              <p class="meta">[Year] &nbsp;·&nbsp; [Personal, academic, or community]</p>
+              <h3><span class="placeholder">[Project name]</span></h3>
+              <p>[A fourth slot is here if you have another strong example.]</p>
+              <details><summary>Read more</summary><p>[Add a longer explanation, project link, or supporting result.]</p></details>
+              <div class="tags"><span>[Tool]</span><span>[Skill]</span><span>[Area]</span></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="skills" aria-labelledby="skills-title">
+        <h2 id="skills-title">Skills &amp; interests</h2>
+        <dl class="skills">
+          <div class="skill-row"><dt>[Area or skill group]</dt><dd>[Relevant skills, tools, or topics]</dd></div>
+          <div class="skill-row"><dt>[Area or skill group]</dt><dd>[Relevant skills, tools, or topics]</dd></div>
+          <div class="skill-row"><dt>[Area or skill group]</dt><dd>[Relevant skills, tools, or topics]</dd></div>
+          <div class="skill-row"><dt>[Outside the classroom]</dt><dd>[Interests, languages, or community]</dd></div>
+        </dl>
+      </section>
+
+      <section class="section contact" id="contact" aria-labelledby="contact-title">
+        <div>
+          <h2 id="contact-title">Get in touch</h2>
+          <p><span class="placeholder">[Add your email and preferred professional links.]</span></p>
+        </div>
+        <div class="social-links">
+          <a href="#about">Back to top ↑</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="wrap">
+      <p>Yassine Elshamy</p>
+      <p>Personal portfolio · <span class="placeholder">[Year]</span></p>
+    </footer>
+  </body>
+</html>
