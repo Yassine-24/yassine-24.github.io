@@ -3,9 +3,9 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Yassine Elshamy — a personal portfolio of experiences, achievements, projects, and updates." />
+    <meta name="description" content="Yassine El Shamy is a UCF computer engineering student, nonprofit founder, and software developer building TailTyme." />
     <meta name="theme-color" content="#ffffff" />
-    <title>Yassine Elshamy</title>
+    <title>Yassine El Shamy | Computer Engineering Student</title>
     <style>
       :root {
         color-scheme: light;
@@ -150,8 +150,6 @@
       }
 
       .social-links span { margin-inline: 0.45rem; color: #aab1b5; }
-      .placeholder { color: #737e85; font-style: italic; }
-
       .facts {
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -342,29 +340,61 @@
 
       .projects {
         display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: minmax(0, 1fr);
         gap: 0.9rem;
       }
       .project-card {
+        display: grid;
+        grid-template-columns: minmax(220px, 0.8fr) minmax(0, 1.4fr);
         overflow: hidden;
         border: 1px solid var(--line);
         border-radius: 7px;
         background: #fff;
       }
       .project-image {
-        display: grid;
-        min-height: 150px;
-        place-items: center;
-        border-bottom: 1px solid var(--line);
-        color: #66747b;
+        display: flex;
+        min-height: 260px;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        gap: 0.8rem;
+        padding: 2rem;
+        border-right: 1px solid var(--line);
+        color: #344c5b;
         background:
-          linear-gradient(135deg, transparent 49.7%, rgba(90, 113, 125, .08) 50%, transparent 50.3%),
-          #f2f4f5;
-        font-size: 0.75rem;
+          radial-gradient(circle at 82% 20%, rgba(74, 123, 150, .12), transparent 42%),
+          linear-gradient(145deg, #f1f4f4, #e8eeef 58%, #f4f4f1);
       }
-      .project-card:nth-child(2) .project-image { background-color: #f4f3f1; }
-      .project-card:nth-child(3) .project-image { background-color: #f1f4f2; }
-      .project-card:nth-child(4) .project-image { background-color: #f4f2f5; }
+      .project-kicker {
+        color: #63747c;
+        font-size: 0.66rem;
+        font-weight: 650;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+      .project-title {
+        font-size: clamp(2.1rem, 5vw, 3.2rem);
+        letter-spacing: -0.07em;
+        line-height: 1;
+      }
+      .project-points {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.4rem;
+      }
+      .project-points span {
+        padding: 0.22rem 0.55rem;
+        border: 1px solid rgba(59, 89, 105, .2);
+        border-radius: 999px;
+        color: #536873;
+        background: rgba(255, 255, 255, .45);
+        font-size: 0.72rem;
+      }
+      .project-link {
+        display: inline-block;
+        margin: 0.1rem 0 0.65rem;
+        font-size: 0.86rem;
+      }
       .project-body { padding: 1rem 1.05rem 1.1rem; }
       .project-body .meta { margin-bottom: 0.4rem; }
 
@@ -454,7 +484,13 @@
         .achievement-list { grid-template-columns: minmax(0, 1fr); gap: 0.6rem; }
         .achievement { padding: 0.85rem 0.95rem; }
         .projects { grid-template-columns: minmax(0, 1fr); gap: 0.7rem; }
-        .project-image { min-height: 125px; }
+        .project-card { grid-template-columns: minmax(0, 1fr); }
+        .project-image {
+          min-height: 160px;
+          padding: 1.4rem;
+          border-right: 0;
+          border-bottom: 1px solid var(--line);
+        }
 
         .skills { grid-template-columns: minmax(0, 1fr); }
         .skill-row { grid-template-columns: minmax(105px, 0.75fr) minmax(0, 1.25fr); gap: 0.65rem; }
@@ -479,29 +515,32 @@
     <header class="wrap">
       <nav class="nav" aria-label="Main navigation">
         <a href="#about">About</a>
+        <a href="#education">Education</a>
         <a href="#news">News</a>
         <a href="#experience">Experience</a>
         <a href="#projects">Projects</a>
         <a href="#achievements">Achievements</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
       </nav>
     </header>
 
     <main class="wrap" id="main-content">
       <section class="hero" id="about" aria-labelledby="page-title">
         <div class="hero-copy">
-          <h1 id="page-title">Yassine Elshamy</h1>
-          <p>Hello! I’m Yassine, <span class="placeholder">[your program, field, or current role]</span>. I’m interested in <span class="placeholder">[the kind of work or questions that motivate you]</span>.</p>
-          <p>My experience includes <span class="placeholder">[a role, project, or meaningful experience]</span>. I enjoy turning what I learn into <span class="placeholder">[a result, contribution, or thing you have built]</span>.</p>
-          <p>I’m currently <span class="placeholder">[what you’re focused on now]</span> and looking for <span class="placeholder">[the opportunity or next step you want]</span>.</p>
+          <h1 id="page-title">Yassine El Shamy</h1>
+          <p>I’m a Computer Engineering student at the University of Central Florida who builds software and works to make technology more accessible.</p>
+          <p>I founded MooseCode, which has provided free programming and AI education to 300+ students, and led TechEase FL volunteer efforts supporting 1,000+ senior citizens across South Florida.</p>
+          <p>Right now, I’m developing TailTyme, a full-stack social sports prediction platform, with beta testing planned for November 2026.</p>
           <div class="social-links" aria-label="Contact and social links">
-            <a href="#contact">Email</a><span aria-hidden="true">/</span>
-            <a href="#projects">Projects</a><span aria-hidden="true">/</span>
-            <a href="#experience">Experience</a>
+            <a href="mailto:yassinesherifshamy@gmail.com">Email</a><span aria-hidden="true">/</span>
+            <a href="https://github.com/Yassine-24" target="_blank" rel="noreferrer">GitHub</a><span aria-hidden="true">/</span>
+            <a href="#projects">Projects</a>
           </div>
         </div>
-        <div class="portrait" role="img" aria-label="Portrait placeholder for Yassine Elshamy">
+        <div class="portrait" role="img" aria-label="Yassine El Shamy, Computer Engineering student at UCF">
           <span class="portrait-monogram" aria-hidden="true">YE</span>
-          <small>[Add a portrait photo]</small>
+          <small>Computer Engineering<br />University of Central Florida</small>
         </div>
       </section>
 
@@ -511,21 +550,35 @@
             <svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2Z"/></svg>
           </span>
           <strong>Education</strong>
-          <small>[Program · School]</small>
+          <small>Computer Engineering · UCF</small>
         </div>
         <div class="fact">
           <span class="fact-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="14" rx="2"/><path d="M8 7V4h8v3M3 12h18M10 12v2h4v-2"/></svg>
           </span>
-          <strong>Current focus</strong>
-          <small>[Role · Project]</small>
+          <strong>STEM education</strong>
+          <small>300+ students reached</small>
         </div>
         <div class="fact">
           <span class="fact-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24"><path d="M12 3v18M3 12h18"/><circle cx="12" cy="12" r="9"/></svg>
           </span>
-          <strong>Open to</strong>
-          <small>[Opportunity · Location]</small>
+          <strong>Digital literacy</strong>
+          <small>1,000+ seniors supported</small>
+        </div>
+      </section>
+
+      <section class="section" id="education" aria-labelledby="education-title">
+        <h2 id="education-title">Education</h2>
+        <div class="experience-list">
+          <article class="experience-card">
+            <h3>University of Central Florida</h3>
+            <p class="meta">Bachelor of Science in Computer Engineering · Orlando, FL · Expected May 2030</p>
+          </article>
+          <article class="experience-card">
+            <h3>American Heritage High School, Palm Beach Campus</h3>
+            <p class="meta">High School Degree · 4.73 GPA · May 2026</p>
+          </article>
         </div>
       </section>
 
@@ -533,115 +586,95 @@
         <h2 id="news-title">News</h2>
         <div class="news-list">
           <article class="news-item">
-            <div class="news-date">[Month Year]</div>
-            <p><span class="placeholder">[A recent achievement, announcement, or milestone.]</span></p>
+            <div class="news-date">Nov 2026</div>
+            <p>Preparing TailTyme for beta testing, planned for November.</p>
           </article>
           <article class="news-item">
-            <div class="news-date">[Month Year]</div>
-            <p><span class="placeholder">[A new role, project, or opportunity you started.]</span></p>
+            <div class="news-date">Oct 2026</div>
+            <p>Earned the Certified SOLIDWORKS Associate credential.</p>
           </article>
           <article class="news-item">
-            <div class="news-date">[Month Year]</div>
-            <p><span class="placeholder">[A result or update worth sharing with visitors.]</span></p>
+            <div class="news-date">May 2026</div>
+            <p>Graduated from American Heritage High School with a 4.73 GPA.</p>
           </article>
         </div>
       </section>
 
       <section class="section" id="experience" aria-labelledby="experience-title">
         <h2 id="experience-title">Experience</h2>
-        <p class="section-intro">A few roles and experiences that have shaped what I know and how I work.</p>
+        <p class="section-intro">Leading community programs taught me to pair technical problem-solving with patient, practical support.</p>
         <div class="experience-list">
           <article class="experience-card">
             <div class="experience-top">
               <div>
-                <h3><span class="placeholder">[Role or experience]</span></h3>
-                <p class="meta">[Organization] &nbsp;·&nbsp; [Location] &nbsp;·&nbsp; [Dates]</p>
+                <h3>Founder &amp; Director</h3>
+                <p class="meta"><a href="https://moosecode.org" target="_blank" rel="noreferrer">MooseCode Inc.</a> &nbsp;·&nbsp; June 2020–Present</p>
               </div>
             </div>
-            <p><span class="placeholder">[In one or two sentences, describe your contribution and its result.]</span></p>
+            <p>Founded and direct a nonprofit providing free programming and artificial intelligence education to more than 300 underserved elementary and middle school students.</p>
             <details>
               <summary>Read more</summary>
-              <p>[Add a little more context, your responsibilities, and a measurable outcome if you have one.]</p>
+              <p>Designed hands-on STEM curricula in Scratch, computer science fundamentals, and introductory AI. Recruited volunteer instructors, partnered with local schools, and organized workshops to expand access to technology education.</p>
             </details>
-            <div class="tags" aria-label="Related skills"><span>[Skill]</span><span>[Skill]</span><span>[Area]</span></div>
+            <div class="tags" aria-label="Related skills"><span>Nonprofit leadership</span><span>STEM education</span><span>Scratch</span><span>AI</span></div>
           </article>
           <article class="experience-card">
-            <h3><span class="placeholder">[Second role, leadership experience, or involvement]</span></h3>
-            <p class="meta">[Organization] &nbsp;·&nbsp; [Location] &nbsp;·&nbsp; [Dates]</p>
-            <p><span class="placeholder">[What you helped accomplish and what you took away from it.]</span></p>
+            <h3>Regional Director</h3>
+            <p class="meta"><a href="https://techeasefl.org" target="_blank" rel="noreferrer">TechEase FL</a> &nbsp;·&nbsp; South Florida &nbsp;·&nbsp; July 2024–July 2026</p>
+            <p>Led volunteer efforts providing technology assistance and digital literacy education to more than 1,000 senior citizens in South Florida retirement communities.</p>
             <details>
               <summary>Read more</summary>
-              <p>[Add supporting details, collaborators, tools, or results.]</p>
+              <p>Diagnosed computer, mobile-device, and software issues so seniors could use everyday technology more independently. Coordinated community outreach and support sessions with retirement communities.</p>
             </details>
-            <div class="tags" aria-label="Related skills"><span>[Skill]</span><span>[Skill]</span><span>[Area]</span></div>
+            <div class="tags" aria-label="Related skills"><span>Digital literacy</span><span>Volunteer leadership</span><span>Community outreach</span></div>
           </article>
         </div>
       </section>
 
       <section class="section" id="achievements" aria-labelledby="achievements-title">
         <h2 id="achievements-title">Achievements</h2>
-        <p class="section-intro">Recognition, outcomes, and goals reached—each with a little context.</p>
+        <p class="section-intro">A few measurable outcomes, academic milestones, and credentials.</p>
         <div class="achievement-list">
           <article class="achievement">
-            <small>[Year] · [Award, honor, or result]</small>
-            <strong><span class="placeholder">[The headline achievement]</span></strong>
-            <p>[What it recognized or why it mattered.]</p>
+            <small>MooseCode · Ongoing</small>
+            <strong>300+ students reached</strong>
+            <p>Free programming and introductory AI education for underserved elementary and middle school students.</p>
           </article>
           <article class="achievement">
-            <small>[Year] · [Competition, program, or milestone]</small>
-            <strong><span class="placeholder">[Another meaningful result]</span></strong>
-            <p>[Add a short explanation or your contribution.]</p>
+            <small>TechEase FL · 2024–2026</small>
+            <strong>1,000+ seniors supported</strong>
+            <p>Regional volunteer technology assistance and digital literacy work across South Florida.</p>
           </article>
           <article class="achievement">
-            <small>[Year] · [Community or personal milestone]</small>
-            <strong><span class="placeholder">[A win you’re proud of]</span></strong>
-            <p>[Add the detail that helps someone understand its impact.]</p>
+            <small>American Heritage · May 2026</small>
+            <strong>4.73 high school GPA</strong>
+            <p>Graduated from American Heritage High School, Palm Beach Campus.</p>
+          </article>
+          <article class="achievement">
+            <small>Certification · October 2026</small>
+            <strong>Certified SOLIDWORKS Associate</strong>
+            <p>Credential in computer-aided design with SOLIDWORKS.</p>
           </article>
         </div>
       </section>
 
       <section class="section" id="projects" aria-labelledby="projects-title">
         <h2 id="projects-title">Selected projects</h2>
-        <p class="section-intro">A closer look at a few things I’ve made, explored, or helped move forward.</p>
+        <p class="section-intro">A social sports prediction platform built to make following games more interactive.</p>
         <div class="projects">
           <article class="project-card">
-            <div class="project-image" role="img" aria-label="Placeholder for project image">[Project image]</div>
-            <div class="project-body">
-              <p class="meta">[Year] &nbsp;·&nbsp; [Course, team, or context]</p>
-              <h3><span class="placeholder">[Project name]</span></h3>
-              <p>[What it does, what you contributed, and one outcome.]</p>
-              <details><summary>Read more</summary><p>[Add a longer explanation, project link, or supporting result.]</p></details>
-              <div class="tags"><span>[Tool]</span><span>[Skill]</span><span>[Area]</span></div>
+            <div class="project-image" aria-hidden="true">
+              <span class="project-kicker">Social sports predictions</span>
+              <strong class="project-title">TailTyme</strong>
+              <span class="project-points"><span>Predict</span><span>Share</span><span>Follow</span></span>
             </div>
-          </article>
-          <article class="project-card">
-            <div class="project-image" role="img" aria-label="Placeholder for project image">[Project image]</div>
             <div class="project-body">
-              <p class="meta">[Year] &nbsp;·&nbsp; [Course, team, or context]</p>
-              <h3><span class="placeholder">[Project name]</span></h3>
-              <p>[The challenge, your approach, and what changed as a result.]</p>
-              <details><summary>Read more</summary><p>[Add a longer explanation, project link, or supporting result.]</p></details>
-              <div class="tags"><span>[Tool]</span><span>[Skill]</span><span>[Area]</span></div>
-            </div>
-          </article>
-          <article class="project-card">
-            <div class="project-image" role="img" aria-label="Placeholder for project image">[Project image]</div>
-            <div class="project-body">
-              <p class="meta">[Year] &nbsp;·&nbsp; [Personal, academic, or community]</p>
-              <h3><span class="placeholder">[Project name]</span></h3>
-              <p>[Add a concise description that highlights your part in the work.]</p>
-              <details><summary>Read more</summary><p>[Add a longer explanation, project link, or supporting result.]</p></details>
-              <div class="tags"><span>[Tool]</span><span>[Skill]</span><span>[Area]</span></div>
-            </div>
-          </article>
-          <article class="project-card">
-            <div class="project-image" role="img" aria-label="Placeholder for project image">[Project image]</div>
-            <div class="project-body">
-              <p class="meta">[Year] &nbsp;·&nbsp; [Personal, academic, or community]</p>
-              <h3><span class="placeholder">[Project name]</span></h3>
-              <p>[A fourth slot is here if you have another strong example.]</p>
-              <details><summary>Read more</summary><p>[Add a longer explanation, project link, or supporting result.]</p></details>
-              <div class="tags"><span>[Tool]</span><span>[Skill]</span><span>[Area]</span></div>
+              <p class="meta">Founder &amp; Developer · June 2020–Present</p>
+              <h3>TailTyme</h3>
+              <p>A full-stack sports prediction platform where users share picks, interact with posts, and follow one another. Beta testing is planned for November 2026.</p>
+              <a class="project-link" href="https://tailtyme.com" target="_blank" rel="noreferrer">Visit TailTyme ↗</a>
+              <details><summary>How it works</summary><p>Built with React, FastAPI, and PostgreSQL. Integrated live sports data through scheduled background synchronization, with Celery and Redis for asynchronous tasks. Added cursor-based pagination, database indexing, and server-side aggregation to support efficient feeds.</p></details>
+              <div class="tags"><span>React</span><span>FastAPI</span><span>PostgreSQL</span><span>Celery</span><span>Redis</span><span>GitHub OAuth</span></div>
             </div>
           </article>
         </div>
@@ -650,27 +683,30 @@
       <section class="section" id="skills" aria-labelledby="skills-title">
         <h2 id="skills-title">Skills &amp; interests</h2>
         <dl class="skills">
-          <div class="skill-row"><dt>[Area or skill group]</dt><dd>[Relevant skills, tools, or topics]</dd></div>
-          <div class="skill-row"><dt>[Area or skill group]</dt><dd>[Relevant skills, tools, or topics]</dd></div>
-          <div class="skill-row"><dt>[Area or skill group]</dt><dd>[Relevant skills, tools, or topics]</dd></div>
-          <div class="skill-row"><dt>[Outside the classroom]</dt><dd>[Interests, languages, or community]</dd></div>
+          <div class="skill-row"><dt>Languages</dt><dd>Java, Python, JavaScript</dd></div>
+          <div class="skill-row"><dt>Web &amp; data</dt><dd>React, FastAPI, PostgreSQL</dd></div>
+          <div class="skill-row"><dt>Tools &amp; platforms</dt><dd>Git, GitHub, VS Code, KiCad, Render, Netlify, Xcode</dd></div>
+          <div class="skill-row"><dt>Background jobs</dt><dd>Celery, Redis</dd></div>
+          <div class="skill-row"><dt>Community work</dt><dd>STEM education, volunteer coordination, digital literacy</dd></div>
         </dl>
       </section>
 
       <section class="section contact" id="contact" aria-labelledby="contact-title">
         <div>
           <h2 id="contact-title">Get in touch</h2>
-          <p><span class="placeholder">[Add your email and preferred professional links.]</span></p>
+          <p><a href="mailto:yassinesherifshamy@gmail.com">yassinesherifshamy@gmail.com</a><br /><a href="tel:+15613445569">561-344-5569</a></p>
         </div>
         <div class="social-links">
+          <a href="https://github.com/Yassine-24" target="_blank" rel="noreferrer">GitHub ↗</a>
+          <span aria-hidden="true">/</span>
           <a href="#about">Back to top ↑</a>
         </div>
       </section>
     </main>
 
     <footer class="wrap">
-      <p>Yassine Elshamy</p>
-      <p>Personal portfolio · <span class="placeholder">[Year]</span></p>
+      <p>Yassine El Shamy</p>
+      <p>Personal portfolio · 2026</p>
     </footer>
   </body>
 </html>
