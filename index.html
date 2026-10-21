@@ -108,39 +108,20 @@
 
       .portrait {
         grid-area: photo;
-        display: grid;
+        display: block;
         width: 100%;
         aspect-ratio: 1 / 1;
-        align-content: center;
-        justify-items: center;
         overflow: hidden;
         border: 1px solid #d9dfe2;
         border-radius: 8px;
-        color: #526775;
-        background:
-          linear-gradient(145deg, rgba(255,255,255,.7), transparent 56%),
-          linear-gradient(135deg, #dfe6e8, #eef1ee 58%, #dce3e5);
-        text-align: center;
       }
 
-      .portrait-monogram {
-        display: grid;
-        width: 66px;
-        aspect-ratio: 1;
-        margin-bottom: 0.6rem;
-        place-items: center;
-        border: 1px solid rgba(54, 87, 107, 0.38);
-        border-radius: 50%;
-        color: #3c627c;
-        font-size: 1.25rem;
-        font-weight: 650;
-        letter-spacing: -0.08em;
-      }
-
-      .portrait small {
-        padding-inline: 0.75rem;
-        color: #64727a;
-        font-size: 0.68rem;
+      .portrait img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
       }
 
       .social-links {
@@ -538,9 +519,8 @@
             <a href="#projects">Projects</a>
           </div>
         </div>
-        <div class="portrait" role="img" aria-label="Yassine El Shamy, Computer Engineering student at UCF">
-          <span class="portrait-monogram" aria-hidden="true">YE</span>
-          <small>Computer Engineering<br />University of Central Florida</small>
+        <div class="portrait">
+          <img src="assets/yassine-headshot.png" alt="Yassine El Shamy in his graduation gown" width="1254" height="1254" />
         </div>
       </section>
 
